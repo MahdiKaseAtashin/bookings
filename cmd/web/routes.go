@@ -12,8 +12,12 @@ func routes(app *config.AppConfig) http.Handler {
 
 	r.Use(NoSurf)
 	r.Use(SessionLoad)
+
 	r.HandleFunc("/", handlers.Repo.Home)
 	r.HandleFunc("/about", handlers.Repo.About)
+
+	fs := http.FileServer(http.Dir("./static"))
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
 
 	return r
 }
