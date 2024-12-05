@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/alexedwards/scs/v2"
-	"github.com/mahdikaseatashin/bookings/pkg/config"
-	"github.com/mahdikaseatashin/bookings/pkg/handlers"
-	"github.com/mahdikaseatashin/bookings/pkg/render"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/alexedwards/scs/v2"
+	"github.com/mahdikaseatashin/bookings/internal/config"
+	"github.com/mahdikaseatashin/bookings/internal/handlers"
+	"github.com/mahdikaseatashin/bookings/internal/render"
 )
 
 const portNumber = ":8080"
